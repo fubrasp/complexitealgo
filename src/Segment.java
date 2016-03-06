@@ -24,4 +24,11 @@ public class Segment {
 		this.pointG = pointG;
 	}
 	
+	public void coordonnees_PointD(){
+		System.out.println("Abscisse : " + pointD.getX() + "Ordonnée : " + pointD.getY());
+	}
+	
+	public void coordonnees_PointG(){
+		System.out.println("Abscisse : " + pointG.getX() + "Ordonnée : " + pointG.getY());
+	}
 }
