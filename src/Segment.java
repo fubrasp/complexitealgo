@@ -1,46 +1,27 @@
 
 public class Segment {
-	private int x_a; 
-	private int x_b; 
-	private int y_a;
-	private int y_b;
+	private Point pointD;
+	private Point pointG;
 	
-	public Segment(int x_a, int y_a, int x_b, int y_b){
-		this.x_a = x_a;
-		this.x_b = x_b;
-		this.y_a = y_a;
-		this.y_b = y_b;
+	public Segment(Point p1, Point p2){
+		this.setPointD(p1);
+		this.setPointG(p2);
 	}
 
-	public int getX_a() {
-		return x_a;
+	public Point getPointD() {
+		return pointD;
 	}
 
-	public void setX_a(int x_a) {
-		this.x_a = x_a;
+	public void setPointD(Point pointD) {
+		this.pointD = pointD;
 	}
 
-	public int getX_b() {
-		return x_b;
+	public Point getPointG() {
+		return pointG;
 	}
 
-	public void setX_b(int x_b) {
-		this.x_b = x_b;
+	public void setPointG(Point pointG) {
+		this.pointG = pointG;
 	}
-
-	public int getY_a() {
-		return y_a;
-	}
-
-	public void setY_a(int y_a) {
-		this.y_a = y_a;
-	}
-
-	public int getY_b() {
-		return y_b;
-	}
-
-	public void setY_b(int y_b) {
-		this.y_b = y_b;
-	}
+	
 }
