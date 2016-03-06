@@ -25,10 +25,10 @@ public class Segment {
 	}
 	
 	public void coordonnees_PointD(){
-		System.out.println("Abscisse : " + pointD.getX() + "Ordonnée : " + pointD.getY());
+		System.out.println("Point D => X : " + pointD.getX() + "Y : " + pointD.getY());
 	}
 	
 	public void coordonnees_PointG(){
-		System.out.println("Abscisse : " + pointG.getX() + "Ordonnée : " + pointG.getY());
+		System.out.println("Point G => X : " + pointG.getX() + "Y : " + pointG.getY());
 	}
 }
