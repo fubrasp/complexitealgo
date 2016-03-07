@@ -24,11 +24,15 @@ public class Segment {
 		this.pointG = pointG;
 	}
 	
-	public void coordonnees_PointD(){
-		System.out.println("Point D => X : " + pointD.getX() + "Y : " + pointD.getY());
+	public String coordonnees_PointD(){
+		return "Point D => X : " + pointD.getX() + " Y : " + pointD.getY();
 	}
 	
-	public void coordonnees_PointG(){
-		System.out.println("Point G => X : " + pointG.getX() + "Y : " + pointG.getY());
+	public String coordonnees_PointG(){
+		return "Point G => X : " + pointG.getX() + " Y : " + pointG.getY();
+	}
+	
+	public String coordonneesCompletesSegment(){
+		return this.coordonnees_PointG() + " | " + this.coordonnees_PointD();
 	}
 }
