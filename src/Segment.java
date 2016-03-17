@@ -35,4 +35,18 @@ public class Segment {
 	public String coordonneesCompletesSegment(){
 		return this.coordonnees_PointG() + " | " + this.coordonnees_PointD();
 	}
+	
+	public int compareTo(Object o) {
+		   if(o.getClass().equals(Segment.class)){
+		      Segment s = (Segment)o;
+		      Integer xG_1 = (Integer)this.getPointG().getX();
+		      Integer xG_2 = (Integer)s.getPointG().getX();
+		      Integer xD_1 = (Integer)this.getPointD().getX();
+		      Integer xD_2 = (Integer)s.getPointD().getX();
+		      
+		      if (xG_1.compareTo(xG_2) == 0) return xD_1.compareTo(xD_2);
+		      return xG_1.compareTo(xG_2);
+		   }
+		   return -1;
+	}
 }
