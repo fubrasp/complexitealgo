@@ -1,3 +1,4 @@
+package metier;
 
 public class Segment {
 	private Point pointD;
