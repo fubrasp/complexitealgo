@@ -1,11 +1,10 @@
-package repere;
+package sources;
+
 
 import java.awt.Graphics;
-import java.awt.Point;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
-import metier.*;
 
 public class Repere extends JPanel{
 	private double graduationBaseX = 1;
@@ -21,8 +20,8 @@ public class Repere extends JPanel{
 	}
 	@Override 
     public void paintComponent(Graphics g){ 
-		metier.Point p1 = new metier.Point(2, 2);
-		metier.Point p2 = new metier.Point(3, 3);
+		Point p1 = new Point(2, 2);
+		Point p2 = new Point(3, 3);
 		
 		Segment s1 = new Segment(p1, p2);
         for (Segment current : this.segments) { 

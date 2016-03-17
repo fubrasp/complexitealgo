@@ -1,4 +1,4 @@
-package metier;
+package sources;
 
 public class Point {
 	private int x, y;
