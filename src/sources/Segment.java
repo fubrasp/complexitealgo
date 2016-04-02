@@ -4,9 +4,14 @@ public class Segment {
 	private Point pointD;
 	private Point pointG;
 	
-	public Segment(Point p1, Point p2){
-		this.setPointD(p1);
-		this.setPointG(p2);
+	public Segment(Point p1, Point p2){	
+		if (p1.getX() > p2.getX()){
+			this.setPointG(p2);
+			this.setPointD(p1);
+		}else{
+			this.setPointG(p1);
+			this.setPointD(p2);
+		}
 	}
 
 	public Point getPointD() {
