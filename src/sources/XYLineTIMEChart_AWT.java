@@ -11,12 +11,15 @@ import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.awt.BasicStroke; 
 import org.jfree.chart.ChartPanel; 
-import org.jfree.chart.JFreeChart; 
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.function.Function2D;
+import org.jfree.data.general.DatasetUtilities;
 import org.jfree.data.xy.XYDataset; 
 import org.jfree.data.xy.XYSeries; 
 import org.jfree.ui.ApplicationFrame; 
 import org.jfree.ui.RefineryUtilities;
 import org.jfree.util.ShapeUtilities;
+
 import org.jfree.chart.plot.XYPlot; 
 import org.jfree.chart.ChartFactory; 
 import org.jfree.chart.plot.PlotOrientation; 
@@ -90,57 +93,29 @@ public class XYLineTIMEChart_AWT extends ApplicationFrame
       }
 	   //on vas faire deux courbes, une pour balayage, une autre pour 
 	   
+	   
+	   //xySeriesCollection.addSeries();
+	   //XYSeries xP2 = new XYSeries("X^2");
+       //xySeriesCollection.
+	   //DatasetUtilities.sampleFunction2D(new X2(), 
+       //        -4.0, 4.0, 40, "f(x)");
+	   
+	   
        return xySeriesCollection;
-     
-       /*
-        * private TimeSeriesCollection createRandomDataset(final String name) {
-        final TimeSeries series = new TimeSeries(name);
-        double value = 100.0;
-        RegularTimePeriod t = new Day();
-        for (int i = 0; i < 50; i++) {
-            series.add(t, value);
-            t = t.next();
-            value = value * (1.0 + Math.random() / 100);
-        }
-        return new TimeSeriesCollection(series);
-    }
-        */
 	}
    
-   /*private XYDataset createDataset( )
-   {
-      final XYSeries firefox = new XYSeries( "Firefox" );          
-      firefox.add( 1.0 , 1.0 );          
-      firefox.add( 3.50 , 4.0 );          
-      
-      final XYSeries chrome = new XYSeries( "Chrome" );          
-      chrome.add( 1.0 , 4.0 );          
-      chrome.add( 2.0 , 5.0 );
-      
-      final XYSeries test = new XYSeries( "test" );          
-      test.add( 10.0 , 4.0 );          
-      test.add( 4.0 , 11.0 ); 
-      
-      final XYSeriesCollection dataset = new XYSeriesCollection( );          
-      dataset.addSeries( firefox );          
-      dataset.addSeries( chrome ); 
-      dataset.addSeries( test ); 
-      return dataset;
-   }*/
+   /**
+    * A simple function.
+    */
+   static class X2 implements Function2D {
 
-   /*
-   public static void main( String[ ] args ) 
-   {
-	  
-	  ArrayList<sources.Segment> arrSegs = new ArrayList<sources.Segment>();
-	  arrSegs.add(new sources.Segment(new sources.Point(1, 2), new sources.Point(3, 4)));
-	  arrSegs.add(new sources.Segment(new sources.Point(3, 7), new sources.Point(5, 6)));	  
-	  arrSegs.add(new sources.Segment(new sources.Point(26, 89), new sources.Point(4, 14)));
-	  arrSegs.add(new sources.Segment(new sources.Point(23, 56), new sources.Point(9, 15)));	  
-     
-	  XYLineChart_AWT chart = new XYLineChart_AWT("Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Segments", arrSegs);
-      chart.pack( );          
-      RefineryUtilities.centerFrameOnScreen( chart );          
-      chart.setVisible( true ); 
-   }*/
+       /* (non-Javadoc)
+        * @see org.jfree.data.function.Function2D#getValue(double)
+        */
+       public double getValue(double x) {
+           return x * x + 2;
+       }
+       
+   }
+
 }
