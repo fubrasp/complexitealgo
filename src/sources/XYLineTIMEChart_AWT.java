@@ -33,7 +33,7 @@ public class XYLineTIMEChart_AWT extends ApplicationFrame
       super(applicationTitle);
       JFreeChart xylineChart = ChartFactory.createXYLineChart(
          chartTitle ,
-         "Temps" ,
+         "Temps (en secondes)" ,
          "Nombre segments" ,
          createDataset(data) ,
          PlotOrientation.VERTICAL ,
@@ -88,6 +88,7 @@ public class XYLineTIMEChart_AWT extends ApplicationFrame
    	    
    	    for (NoeudTempsNombre noeudTempsNombre : methodeCourante) {
    	    	test.add(noeudTempsNombre.getTemps(), noeudTempsNombre.getNombreDeSegments());
+   	    	//test.add(noeudTempsNombre.getTemps()/1000000000, noeudTempsNombre.getNombreDeSegments());
 		}
    	    xySeriesCollection.addSeries(test);
       }
