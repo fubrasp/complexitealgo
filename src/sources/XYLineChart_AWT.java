@@ -25,6 +25,7 @@ import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 
 public class XYLineChart_AWT extends ApplicationFrame 
 {
+	//pour enlever la legende on passer un booleen dans le constructeur sur demande qui se met au bon etat en fonction du nb de segments
    public XYLineChart_AWT( String applicationTitle, String chartTitle, ArrayList<sources.Segment> arrSegs )
    {
       super(applicationTitle);
