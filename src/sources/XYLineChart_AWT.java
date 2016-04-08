@@ -71,7 +71,7 @@ public class XYLineChart_AWT extends ApplicationFrame
        sources.Segment courant;
        for (int x = 0; x < arrSegs.size(); x++) {
     	    courant=arrSegs.get(x);
-    	    XYSeries test = new XYSeries("S"+x);
+    	    XYSeries test = new XYSeries("S"+(x+1));
     	    test.add(courant.getPointG().getX(), courant.getPointG().getY());
    		    test.add(courant.getPointD().getX(), courant.getPointD().getY());
     	    xySeriesCollection.addSeries(test);
