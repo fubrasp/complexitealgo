@@ -12,6 +12,11 @@ public class Principale {
 	 */
 	public static void main(String args[]) throws Exception {
 
+		ArrayList<Segment> jeu = Matrice.genererSegmentsAleatoire(1000, 1);
+		System.out.println("NOMBRE DE SEGMENTS TEST: "+jeu.size());
+		System.out.println("TEST BALAYAGE: "+Matrice.Balayage(jeu));
+		System.out.println("TEST TOUTES LES PAIRES: "+Matrice.ToutesLesPaires(jeu));
+		
 		ArrayList<Object> tasks = new ArrayList<Object>();
 		Scanner sc = new Scanner(System.in);
 		String result = "";
@@ -43,7 +48,10 @@ public class Principale {
 			break;
 
 		default:
-			System.out.println("AUCUNE INSTRUCTION TROUVEE: \"Tout\" est choisi");
+			System.out.println("AUCUNE/MAUVAISE INSTRUCTION TROUVEE: \"Tout\" est choisi");
+			petitsExemples = true;
+			tousLesJeuxDeTests = true;
+			pairesMoyennesDeSegments = true;
 			break;
 		}
 
@@ -51,6 +59,7 @@ public class Principale {
 		 * ------ Test des deux fonctions ------
 		 */
 		if (petitsExemples) {
+				
 			System.out.println("\n*** Test fonction : Balayage() et ToutesLesPaires()");
 			ArrayList<Segment> lesS = new ArrayList<Segment>();
 			lesS.add(new Segment(new Point(1, 1), new Point(2, 5)));
@@ -236,6 +245,11 @@ public class Principale {
 			grapheNTIII.pack();
 			RefineryUtilities.centerFrameOnScreen(grapheNTIII);
 			grapheNTIII.setVisible(true);
+		}
+		
+		System.out.println("\"Quitter\" pour fermer l'application");
+		if(sc.nextLine().equals("Quitter")){
+			System.exit(0);
 		}
 	}
 }
