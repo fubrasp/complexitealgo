@@ -93,8 +93,9 @@ public class Principale {
 		 */
 		if (petitsExemples) {
 
-			System.out.println("\n*** Test fonction : Balayage() et ToutesLesPaires()");
-			// je de teste pour demonstration des segments secants
+			//jeu de tests 1
+			System.out.println("\n*** Test fonction : Balayage() et ToutesLesPaires()\n si vous voulez tester vous-meme ne vous faites pas avoir par les segments confondus");
+			// jeu de tests pour demonstration des segments secants
 			ArrayList<Segment> lesS = new ArrayList<Segment>();
 			lesS.add(new Segment(new Point(1, 1), new Point(2, 5)));
 			lesS.add(new Segment(new Point(1, -2), new Point(4, 1)));
@@ -109,33 +110,56 @@ public class Principale {
 			lesS.add(new Segment(new Point(-2, 4), new Point(0, 12)));
 			lesS.add(new Segment(new Point(5, 4), new Point(1, 9)));
 			
-			/*lesS.add(new Segment(new Point(4, 2), new Point(4, 1)));
-			lesS.add(new Segment(new Point(4, 3), new Point(5, 4)));
-			lesS.add(new Segment(new Point(1, 7), new Point(10, 8)));
-			*/
-			
-			//lesS.add(new Segment(new Point(0, 0), new Point(0, 2)));
-			//lesS.add(new Segment(new Point(-1, 1), new Point(1, 1)));
-			//lesS.add(new Segment(new Point(-1, 0), new Point(1, 2)));
-			
-			/*lesS.add(new Segment(new Point(-2, 4), new Point(0, 12)));
-			lesS.add(new Segment(new Point(5, 4), new Point(1, 9)));
-			lesS.add(new Segment(new Point(4, 4), new Point(6, 10)));
-			lesS.add(new Segment(new Point(2, 6), new Point(-6, 8)));
-			lesS.add(new Segment(new Point(-2, 4), new Point(0, 12)));
-			lesS.add(new Segment(new Point(5, 4), new Point(1, 9)));
-			*/
-			// affichage des resultats
+			// affichage des resultats jeu de test 1
 			System.out.println("NOMBRE DE SEGMENTS DANS LA LISTE: " + lesS.size());
 			System.out.println("BALAYAGE nombre: " + Matrice.Balayage(lesS) + " intersections");
 			System.out.println("ToutesLesPaires nombre : " + Matrice.ToutesLesPaires(lesS) + " intersections\n");
 
-			// representation graphique
+			// representation graphique jeu de test 1
 			XYLineChart_AWT confirmationIntersectionsSegments = new XYLineChart_AWT(
-					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Visualisation des segments ", lesS);
+					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Visualisation des segments jeu de test 1", lesS);
 			confirmationIntersectionsSegments.pack();
 			RefineryUtilities.centerFrameOnScreen(confirmationIntersectionsSegments);
 			confirmationIntersectionsSegments.setVisible(true);
+			
+			//jeu de test 2
+			ArrayList<Segment> lesS2 = new ArrayList<Segment>();
+
+			lesS2.add(new Segment(new Point(4, 2), new Point(4, 1)));
+			lesS2.add(new Segment(new Point(4, 3), new Point(5, 4)));
+			lesS2.add(new Segment(new Point(1, 7), new Point(10, 8)));
+			
+			// affichage des resultats jeu de test 2
+			System.out.println("NOMBRE DE SEGMENTS DANS LA LISTE2: " + lesS2.size());
+			System.out.println("BALAYAGE nombre: " + Matrice.Balayage(lesS2) + " intersections");
+			System.out.println("ToutesLesPaires nombre : " + Matrice.ToutesLesPaires(lesS2) + " intersections\n");
+			
+			// representation graphique jeu de test 2
+						XYLineChart_AWT confirmationIntersectionsSegments2 = new XYLineChart_AWT(
+								"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Visualisation des segments jeu de test 2", lesS2);
+						confirmationIntersectionsSegments2.pack();
+						RefineryUtilities.centerFrameOnScreen(confirmationIntersectionsSegments2);
+						confirmationIntersectionsSegments2.setVisible(true);
+						
+			//jeu de test 3
+			ArrayList<Segment> lesS3 = new ArrayList<Segment>();
+
+			lesS3.add(new Segment(new Point(-2, 4), new Point(0, 12)));
+			lesS3.add(new Segment(new Point(5, 4), new Point(1, 9)));
+			lesS3.add(new Segment(new Point(4, 4), new Point(6, 10)));
+			lesS3.add(new Segment(new Point(2, 6), new Point(-6, 8)));
+			
+			// affichage des resultats jeu de test 3
+			System.out.println("NOMBRE DE SEGMENTS DANS LA LISTE2: " + lesS3.size());
+			System.out.println("BALAYAGE nombre: " + Matrice.Balayage(lesS3) + " intersections");
+			System.out.println("ToutesLesPaires nombre : " + Matrice.ToutesLesPaires(lesS3) + " intersections\n");
+			
+			// representation graphique jeu de test 2
+			XYLineChart_AWT confirmationIntersectionsSegments3 = new XYLineChart_AWT(
+					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Visualisation des segments jeu de test 3", lesS3);
+			confirmationIntersectionsSegments3.pack();
+			RefineryUtilities.centerFrameOnScreen(confirmationIntersectionsSegments3);
+			confirmationIntersectionsSegments3.setVisible(true);			
 		}
 
 		/*
