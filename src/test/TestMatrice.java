@@ -11,14 +11,13 @@ public class TestMatrice extends Matrice {
 	
 	public void testBalayage(List<Segment> s){
 		assertEquals(ToutesLesPaires(s), Balayage(s));
+		assertEquals(17, ToutesLesPaires(s));
+		assertEquals(17, Balayage(s));
 	}
 	
 	@Test
 	public void test() {
 		List<Segment> lesS = new ArrayList<Segment>();
-		//lesS.add(new Segment(new Point(1, 1), new Point(2, 4)));
-		//lesS.add(new Segment(new Point(1, -2), new Point(4, 1)));
-		//lesS.add(new Segment(new Point(4, 4), new Point(2, 8)));
 		
 		lesS.add(new Segment(new Point(1, 1), new Point(2, 5)));
 		lesS.add(new Segment(new Point(6, -2), new Point(4, 1)));

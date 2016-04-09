@@ -18,12 +18,24 @@ public class Principale {
 	 */
 	public static void main(String args[]) throws Exception {
 
+		
 		// TEST de fonctionnement des algorithmes
-		ArrayList<Segment> jeu = Matrice.genererSegmentsAleatoire(1000, 1);
+		ArrayList<Segment> jeu = Matrice.genererSegmentsAleatoire(100, 1);
 		System.out.println("NOMBRE DE SEGMENTS TEST: " + jeu.size());
+		long startTimeB = System.nanoTime();
 		System.out.println("TEST BALAYAGE: " + Matrice.Balayage(jeu));
+		long elapsedTimeNsB = System.nanoTime() - startTimeB;
+		System.out.println("DUREE BALAYAGE: "+elapsedTimeNsB+" ns");
+		long startTimeTLP = System.nanoTime();
 		System.out.println("TEST TOUTES LES PAIRES: " + Matrice.ToutesLesPaires(jeu));
-
+		long elapsedTimeNsTLP = System.nanoTime() - startTimeTLP;
+		System.out.println("DUREE TOUTES LES PAIRES: "+elapsedTimeNsTLP+" ns");
+		if(elapsedTimeNsB<elapsedTimeNsTLP){
+			System.out.println("BALAYAGE PLUS RAPIDE\n");
+		}else{
+			System.out.println("TOUTES LES PAIRES PLUS RAPIDE\n");
+		}
+		
 		// on releve l'entree utilisateur plus tard
 		Scanner sc = new Scanner(System.in);
 		String result = "";
@@ -96,7 +108,23 @@ public class Principale {
 			lesS.add(new Segment(new Point(2, 6), new Point(-6, 8)));
 			lesS.add(new Segment(new Point(-2, 4), new Point(0, 12)));
 			lesS.add(new Segment(new Point(5, 4), new Point(1, 9)));
-
+			
+			/*lesS.add(new Segment(new Point(4, 2), new Point(4, 1)));
+			lesS.add(new Segment(new Point(4, 3), new Point(5, 4)));
+			lesS.add(new Segment(new Point(1, 7), new Point(10, 8)));
+			*/
+			
+			//lesS.add(new Segment(new Point(0, 0), new Point(0, 2)));
+			//lesS.add(new Segment(new Point(-1, 1), new Point(1, 1)));
+			//lesS.add(new Segment(new Point(-1, 0), new Point(1, 2)));
+			
+			/*lesS.add(new Segment(new Point(-2, 4), new Point(0, 12)));
+			lesS.add(new Segment(new Point(5, 4), new Point(1, 9)));
+			lesS.add(new Segment(new Point(4, 4), new Point(6, 10)));
+			lesS.add(new Segment(new Point(2, 6), new Point(-6, 8)));
+			lesS.add(new Segment(new Point(-2, 4), new Point(0, 12)));
+			lesS.add(new Segment(new Point(5, 4), new Point(1, 9)));
+			*/
 			// affichage des resultats
 			System.out.println("NOMBRE DE SEGMENTS DANS LA LISTE: " + lesS.size());
 			System.out.println("BALAYAGE nombre: " + Matrice.Balayage(lesS) + " intersections");
