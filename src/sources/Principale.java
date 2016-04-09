@@ -21,10 +21,8 @@ public class Principale {
 		// TEST de fonctionnement des algorithmes
 		ArrayList<Segment> jeu = Matrice.genererSegmentsAleatoire(1000, 1);
 		System.out.println("NOMBRE DE SEGMENTS TEST: " + jeu.size());
-		//System.out.println("TEST BALAYAGE: " + Matrice.Balayage(jeu));
-		System.out.println("TEST BALAYAGE __V2__: " + Matrice.balayage2(jeu) );
-		System.out.println("TEST TOUTES LES PAIRES __V2__: " + Matrice.ToutesLesPaires2(jeu));
-		//System.out.println("TEST TOUTES LES PAIRES: " + Matrice.ToutesLesPaires(jeu));
+		System.out.println("TEST BALAYAGE: " + Matrice.Balayage(jeu));
+		System.out.println("TEST TOUTES LES PAIRES: " + Matrice.ToutesLesPaires(jeu));
 
 		// on releve l'entree utilisateur plus tard
 		Scanner sc = new Scanner(System.in);
