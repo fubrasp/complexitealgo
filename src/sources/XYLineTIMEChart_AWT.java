@@ -40,7 +40,7 @@ public class XYLineTIMEChart_AWT extends ApplicationFrame
       //on creer un graphe en renseignant les axes, l'orientation, en y incorporant les donnees, plusieurs options sont disponible avec les booleens
       JFreeChart xylineChart = ChartFactory.createXYLineChart(
          chartTitle ,
-         "Temps (en secondes)" ,
+         "Temps (en nanosecondes)" ,
          "Nombre segments" ,
          createDataset(data) ,
          PlotOrientation.VERTICAL ,

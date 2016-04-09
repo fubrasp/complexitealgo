@@ -157,18 +157,26 @@ public class Principale {
 			listeI.add(Matrice.genererSegmentsAleatoire(800, 1));
 			listeI.add(Matrice.genererSegmentsAleatoire(900, 1));
 			listeI.add(Matrice.genererSegmentsAleatoire(1000, 1));
-			/*
-			 * listeI.add(Matrice.genererSegmentsAleatoire(1200, 1));
-			 * listeI.add(Matrice.genererSegmentsAleatoire(1400, 1));
-			 * listeI.add(Matrice.genererSegmentsAleatoire(1600, 1));
-			 * listeI.add(Matrice.genererSegmentsAleatoire(1800, 1));
-			 * listeI.add(Matrice.genererSegmentsAleatoire(2000, 1));
-			 * listeI.add(Matrice.genererSegmentsAleatoire(2500, 1));
-			 * listeI.add(Matrice.genererSegmentsAleatoire(3000, 1));
-			 * listeI.add(Matrice.genererSegmentsAleatoire(3500, 1));
-			 * listeI.add(Matrice.genererSegmentsAleatoire(4000, 1));
-			 */
+			listeI.add(Matrice.genererSegmentsAleatoire(1200, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(1400, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(1600, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(1800, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(2000, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(2500, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(3000, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(3500, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(4000, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(4500, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(5000, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(5500, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(6000, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(6500, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(7000, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(7500, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(8000, 1));
 
+			
+			
 			// on formate les donnees, et on estime le temps des algos pour le
 			// graphe
 			ArrayList<ArrayList<NoeudTempsNombre>> retourDonneesI = Matrice.estimerTemps(listeI);
@@ -208,17 +216,24 @@ public class Principale {
 			listeII.add(Matrice.genererSegmentsAleatoire(800, 2));
 			listeII.add(Matrice.genererSegmentsAleatoire(900, 2));
 			listeII.add(Matrice.genererSegmentsAleatoire(1000, 2));
-			/*
-			 * listeII.add(Matrice.genererSegmentsAleatoire(1200, 2));
-			 * listeII.add(Matrice.genererSegmentsAleatoire(1400, 2));
-			 * listeII.add(Matrice.genererSegmentsAleatoire(1600, 2));
-			 * listeII.add(Matrice.genererSegmentsAleatoire(1800, 2));
-			 * listeII.add(Matrice.genererSegmentsAleatoire(2000, 2));
-			 * listeII.add(Matrice.genererSegmentsAleatoire(2500, 2));
-			 * listeII.add(Matrice.genererSegmentsAleatoire(3000, 2));
-			 * listeII.add(Matrice.genererSegmentsAleatoire(3500, 2));
-			 * listeII.add(Matrice.genererSegmentsAleatoire(4000, 2));
-			 */
+			listeII.add(Matrice.genererSegmentsAleatoire(1200, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(1400, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(1600, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(1800, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(2000, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(2500, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(3000, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(3500, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(4000, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(4500, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(5000, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(5500, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(6000, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(6500, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(7000, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(7500, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(8000, 2));
+			
 
 			// on formate les donnees, et on estime le temps des algos pour le
 			// graphe
@@ -259,17 +274,24 @@ public class Principale {
 			listeIII.add(Matrice.genererSegmentsAleatoire(800, 3));
 			listeIII.add(Matrice.genererSegmentsAleatoire(900, 3));
 			listeIII.add(Matrice.genererSegmentsAleatoire(1000, 3));
-			/*
-			 * listeIII.add(Matrice.genererSegmentsAleatoire(1200, 3));
-			 * listeIII.add(Matrice.genererSegmentsAleatoire(1400, 3));
-			 * listeIII.add(Matrice.genererSegmentsAleatoire(1600, 3));
-			 * listeIII.add(Matrice.genererSegmentsAleatoire(1800, 3));
-			 * listeIII.add(Matrice.genererSegmentsAleatoire(2000, 3));
-			 * listeIII.add(Matrice.genererSegmentsAleatoire(2500, 3));
-			 * listeIII.add(Matrice.genererSegmentsAleatoire(3000, 3));
-			 * listeIII.add(Matrice.genererSegmentsAleatoire(3500, 3));
-			 * listeIII.add(Matrice.genererSegmentsAleatoire(4000, 3));
-			 */
+			listeIII.add(Matrice.genererSegmentsAleatoire(1200, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(1400, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(1600, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(1800, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(2000, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(2500, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(3000, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(3500, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(4000, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(4500, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(5000, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(5500, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(6000, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(6500, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(7000, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(7500, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(8000, 3));
+			
 
 			// on formate les donnees, et on estime le temps des algos pour le
 			// graphe
