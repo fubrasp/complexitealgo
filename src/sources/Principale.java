@@ -7,59 +7,65 @@ import org.jfree.ui.RefineryUtilities;
 
 /**
  * Classe principale permettant de lancer le programme
+ * 
  * @author ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO
  */
 public class Principale {
 	/**
 	 * 
-	 * @throws Exception selon les classes appelees
+	 * @throws Exception
+	 *             selon les classes appelees
 	 */
 	public static void main(String args[]) throws Exception {
 
-		//TEST de fonctionnement des algorithmes
+		// TEST de fonctionnement des algorithmes
 		ArrayList<Segment> jeu = Matrice.genererSegmentsAleatoire(1000, 1);
-		System.out.println("NOMBRE DE SEGMENTS TEST: "+jeu.size());
-		System.out.println("TEST BALAYAGE: "+Matrice.Balayage(jeu));
-		System.out.println("TEST TOUTES LES PAIRES: "+Matrice.ToutesLesPaires(jeu));
-		
-		//on releve l'entree utilisateur plus tard
+		System.out.println("NOMBRE DE SEGMENTS TEST: " + jeu.size());
+		System.out.println("TEST BALAYAGE: " + Matrice.Balayage(jeu));
+		System.out.println("TEST TOUTES LES PAIRES: " + Matrice.ToutesLesPaires(jeu));
+
+		// on releve l'entree utilisateur plus tard
 		Scanner sc = new Scanner(System.in);
 		String result = "";
-		//on effectue different cas
+		// on effectue different cas
 		boolean petitsExemples = false, tousLesJeuxDeTests = false, pairesMoyennesDeSegments = false;
 
-		//on donne l'information
+		// on donne l'information
 		System.out.println(
 				"Donnez votre choix:\n tout (T),\n petitsExemples (Q3) (Question 3),\n tous les jeux de tests (Q4) (question 4),\n nombre de paires moyennes de segments se coupant (Q5) (question 5)");
-		//on recupere l'entree utilisateur
+		// on recupere l'entree utilisateur
 		result = sc.nextLine();
 
-		//selon le choix dans result on affecte les variable booleene..
+		// selon le choix dans result on affecte les variable booleene..
 		switch (result) {
-		//on veut tout
+		// on veut tout
 		case "T":
 			petitsExemples = true;
 			tousLesJeuxDeTests = true;
 			pairesMoyennesDeSegments = true;
 			break;
 
-		//uniquement de petits ensembles	
+		// uniquement de petits ensembles
 		case "Q3":
 			petitsExemples = true;
 			break;
 
-		//on veut les graphes du nombres de segments en fonction du temps, ca demande beaucoup de performance 	
+		// on veut les graphes du nombres de segments en fonction du temps, ca
+		// demande beaucoup de performance
 		case "Q4":
 			System.out.println("Ceci peut prendre un certain temps..");
 			tousLesJeuxDeTests = true;
 			break;
 
-		//on veut les moyennes des paires secantes pour un nombre de segments donees, et prochainement le graphe 3 cas, du nombre de segments, et du nombres de paires secantes 	
+		// on veut les moyennes des paires secantes pour un nombre de segments
+		// donees, et prochainement le graphe 3 cas, du nombre de segments, et
+		// du nombres de paires secantes
 		case "Q5":
 			pairesMoyennesDeSegments = true;
 			break;
 
-		//apparement on peut refaire le cas du tout on doir faire de la redondance	
+		// apparement on peut refaire le cas du tout on doir faire de la
+		// redondance
 		default:
 			System.out.println("AUCUNE/MAUVAISE INSTRUCTION TROUVEE: \"Tout\" est choisi");
 			petitsExemples = true;
@@ -68,14 +74,15 @@ public class Principale {
 			break;
 		}
 
-		//selon les booleens on fait les operations vu que nous n'avons pas de multi-thread, on procede par ordre de performance et d'importance
+		// selon les booleens on fait les operations vu que nous n'avons pas de
+		// multi-thread, on procede par ordre de performance et d'importance
 		/*
 		 * ------ Test des deux fonctions ------
 		 */
 		if (petitsExemples) {
-				
+
 			System.out.println("\n*** Test fonction : Balayage() et ToutesLesPaires()");
-			//je de teste pour demonstration des segments secants
+			// je de teste pour demonstration des segments secants
 			ArrayList<Segment> lesS = new ArrayList<Segment>();
 			lesS.add(new Segment(new Point(1, 1), new Point(2, 5)));
 			lesS.add(new Segment(new Point(1, -2), new Point(4, 1)));
@@ -90,12 +97,12 @@ public class Principale {
 			lesS.add(new Segment(new Point(-2, 4), new Point(0, 12)));
 			lesS.add(new Segment(new Point(5, 4), new Point(1, 9)));
 
-			//affichage des resultats
+			// affichage des resultats
 			System.out.println("NOMBRE DE SEGMENTS DANS LA LISTE: " + lesS.size());
 			System.out.println("BALAYAGE nombre: " + Matrice.Balayage(lesS) + " intersections");
 			System.out.println("ToutesLesPaires nombre : " + Matrice.ToutesLesPaires(lesS) + " intersections\n");
 
-			//representation graphique
+			// representation graphique
 			XYLineChart_AWT confirmationIntersectionsSegments = new XYLineChart_AWT(
 					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Visualisation des segments ", lesS);
 			confirmationIntersectionsSegments.pack();
@@ -122,7 +129,7 @@ public class Principale {
 
 		// on le laisse en dernier a cause de la consommation des ressources
 		if (tousLesJeuxDeTests) {
-			//jeu de tests pour le cas i
+			// jeu de tests pour le cas i
 			ArrayList<ArrayList<Segment>> listeI = new ArrayList<ArrayList<Segment>>();
 
 			listeI.add(Matrice.genererSegmentsAleatoire(10, 1));
@@ -162,17 +169,18 @@ public class Principale {
 			 * listeI.add(Matrice.genererSegmentsAleatoire(4000, 1));
 			 */
 
-			//on formate les donnees, et on estime le temps des algos pour le graphe
+			// on formate les donnees, et on estime le temps des algos pour le
+			// graphe
 			ArrayList<ArrayList<NoeudTempsNombre>> retourDonneesI = Matrice.estimerTemps(listeI);
-			//representation graphique
+			// representation graphique
 			XYLineTIMEChart_AWT grapheNTI = new XYLineTIMEChart_AWT(
 					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO",
 					"Visualisation de la performance des algorithmes (jeu i)", retourDonneesI);
 			grapheNTI.pack();
 			RefineryUtilities.centerFrameOnScreen(grapheNTI);
 			grapheNTI.setVisible(true);
-			
-			//jeu de tests pour le cas ii
+
+			// jeu de tests pour le cas ii
 			ArrayList<ArrayList<Segment>> listeII = new ArrayList<ArrayList<Segment>>();
 
 			listeII.add(Matrice.genererSegmentsAleatoire(10, 2));
@@ -212,9 +220,10 @@ public class Principale {
 			 * listeII.add(Matrice.genererSegmentsAleatoire(4000, 2));
 			 */
 
-			//on formate les donnees, et on estime le temps des algos pour le graphe
+			// on formate les donnees, et on estime le temps des algos pour le
+			// graphe
 			ArrayList<ArrayList<NoeudTempsNombre>> retourDonneesII = Matrice.estimerTemps(listeII);
-			//representation graphique
+			// representation graphique
 			XYLineTIMEChart_AWT grapheNTII = new XYLineTIMEChart_AWT(
 					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO",
 					"Visualisation de la performance des algorithmes (jeu ii)", retourDonneesII);
@@ -222,7 +231,7 @@ public class Principale {
 			RefineryUtilities.centerFrameOnScreen(grapheNTII);
 			grapheNTII.setVisible(true);
 
-			//jeu de tests pour le cas iii
+			// jeu de tests pour le cas iii
 			ArrayList<ArrayList<Segment>> listeIII = new ArrayList<ArrayList<Segment>>();
 
 			listeIII.add(Matrice.genererSegmentsAleatoire(10, 3));
@@ -262,9 +271,10 @@ public class Principale {
 			 * listeIII.add(Matrice.genererSegmentsAleatoire(4000, 3));
 			 */
 
-			//on formate les donnees, et on estime le temps des algos pour le graphe
+			// on formate les donnees, et on estime le temps des algos pour le
+			// graphe
 			ArrayList<ArrayList<NoeudTempsNombre>> retourDonneesIII = Matrice.estimerTemps(listeIII);
-			//representation graphique
+			// representation graphique
 			XYLineTIMEChart_AWT grapheNTIII = new XYLineTIMEChart_AWT(
 					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO",
 					"Visualisation de la performance des algorithmes (jeu iii)", retourDonneesIII);
@@ -272,10 +282,10 @@ public class Principale {
 			RefineryUtilities.centerFrameOnScreen(grapheNTIII);
 			grapheNTIII.setVisible(true);
 		}
-		
-		//information et fermeture de l'application
+
+		// information et fermeture de l'application
 		System.out.println("\"Quitter\" pour fermer l'application (obligation)");
-		if(sc.nextLine().equals("Quitter")){
+		if (sc.nextLine().equals("Quitter")) {
 			System.exit(0);
 		}
 	}

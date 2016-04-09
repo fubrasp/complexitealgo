@@ -1,18 +1,21 @@
 package sources;
 
 /**
- * Classe modelisant un objet associant un nombre de segments et une duree de realisation
- *  d'un algorithme donne suivant un cas donnee
+ * Classe modelisant un objet associant un nombre de segments et une duree de
+ * realisation d'un algorithme donne suivant un cas donnee
+ * 
  * @author ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO
  */
 public class NoeudTempsNombre {
-	
-	//attributs
+
+	// attributs
 	private int nombreDeSegments;
 	private long temps;
-	
+
 	/**
-	 * Constructeur permetant de creer un objet associant associant un nombre de segments et une duree
+	 * Constructeur permetant de creer un objet associant associant un nombre de
+	 * segments et une duree
+	 * 
 	 * @param nombreDeSegments
 	 * @param temps
 	 */
@@ -20,23 +23,23 @@ public class NoeudTempsNombre {
 		this.nombreDeSegments = nombreDeSegments;
 		this.temps = temps;
 	}
-	
-	//getteur
+
+	// getteur
 	public int getNombreDeSegments() {
 		return nombreDeSegments;
 	}
-	
-	//setteur
+
+	// setteur
 	public void setNombreDeSegments(int nombreDeSegments) {
 		this.nombreDeSegments = nombreDeSegments;
 	}
-	
-	//getteur
+
+	// getteur
 	public long getTemps() {
 		return temps;
 	}
-	
-	//setteur
+
+	// setteur
 	public void setTemps(long temps) {
 		this.temps = temps;
 	}

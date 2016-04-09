@@ -26,11 +26,18 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.xy.XYSeriesCollection; 
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 
+/**
+ * Classe permettant de faire les graphes sur lenombre de segments et la duree selon les algorithmes
+ * @author ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO
+ * il s'agit d'une librairie: jfreechart (la documentation est payante!)
+ */
 public class XYLineTIMEChart_AWT extends ApplicationFrame 
 {
+	//pour enlever la legende on passer un booleen dans le constructeur sur demande qui se met au bon etat en fonction du nb de segments
    public XYLineTIMEChart_AWT(String applicationTitle, String chartTitle, ArrayList<ArrayList<NoeudTempsNombre>> data)
    {
       super(applicationTitle);
+      //on creer un graphe en renseignant les axes, l'orientation, en y incorporant les donnees, plusieurs options sont disponible avec les booleens
       JFreeChart xylineChart = ChartFactory.createXYLineChart(
          chartTitle ,
          "Temps (en secondes)" ,
@@ -38,42 +45,51 @@ public class XYLineTIMEChart_AWT extends ApplicationFrame
          createDataset(data) ,
          PlotOrientation.VERTICAL ,
          true , true , false);
-         
-      ChartPanel chartPanel = new ChartPanel( xylineChart );
-      chartPanel.setPreferredSize( new java.awt.Dimension( 800 , 800 ) );
+      
+      //on l'incorpore dans un panel
+      ChartPanel chartPanel = new ChartPanel(xylineChart);
+      //on attribue une dimension par defaut
+      chartPanel.setPreferredSize(new java.awt.Dimension(800 , 800));
+      //obtenir la courbe courante
       final XYPlot plot = xylineChart.getXYPlot( );
-      //En gris ça rend aussi?
-      //plot.setBackgroundPaint(Color.GRAY);
+    //couleur blanche de l'arriere plan
       plot.setBackgroundPaint(Color.WHITE);
+      //mettre le quadrtiage en rouge
       plot.setRangeGridlinePaint(Color.RED);
-      plot.setDomainGridlinePaint(Color.RED);;
+      plot.setDomainGridlinePaint(Color.RED);
       //pas besoin c'est par defaut
       //plot.setRangeGridlinesVisible(true);
+      //creation d'un renderer 
       XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer( );
-      /*renderer.setSeriesPaint(0 , Color.RED );
-      renderer.setSeriesStroke( 0 , new BasicStroke( 3.0f ) );*/
+      //epaisseur des traits
       Stroke solid = new BasicStroke(3.5f);
       //depreciated mais le setBasicStroke ne passe pas
+      //c'est le plus pratique vu qu'on souhaite de l'uniformite
       renderer.setStroke(solid);
-      //même remarque
-      // A TESTER QUE PREFEREZ VOUS
-      //renderer.setShape(ShapeUtilities.createRegularCross(3.0f, 5.0f));
-      //renderer.setShape(ShapeUtilities.createRegularCross(6.0f, 0.5f));
+      //meme remarque
       renderer.setShape(ShapeUtilities.createDiamond(4.0f));
-      //Line2D line = new Line2D.Float(2, 2, -1, -1);
-      //renderer.setShape(ShapeUtilities.createLineRegion(line, 5.0f));
-      plot.setRenderer( renderer ); 
-      setContentPane( chartPanel ); 
+      plot.setRenderer(renderer); 
+      //on finit en affectant le panel au frame
+      setContentPane(chartPanel); 
    }
    
+   /**
+    * Methode construisant l'objet destine a la creation des courbes etc.
+    * @param data structure permettant de representer le graphe
+    * @return collection que l'on peut parcourir aisement et ainsi representer le graphe
+    */
    private XYDataset createDataset(ArrayList<ArrayList<NoeudTempsNombre>> data){
+	   //on instancie la structure de donnees
 	   XYSeriesCollection xySeriesCollection = new XYSeriesCollection();
 	   XYDataset result = null;
+       //utilise dans le parcours
 	   ArrayList<NoeudTempsNombre> methodeCourante;
 	   for (int x = 0; x < data.size(); x++) {
-   	    methodeCourante=data.get(x);
-   	    //init???
+   	    //on obtient l'element courant
+		   methodeCourante=data.get(x);
+
    	    XYSeries test = null;
+   	    //on forme les series de points selon les cas (on legende differament..)
    	    if(x==0){
    	    	test= new XYSeries("BALAYAGE");
    	    }
@@ -85,38 +101,14 @@ public class XYLineTIMEChart_AWT extends ApplicationFrame
    	   	    	test= new XYSeries("BOG"+x);
    	    	}
    	    }
-   	    
+   	    //on a directement les valeurs en secondes..pas besoin de modifier ici pour le passage en nanosecondes..
    	    for (NoeudTempsNombre noeudTempsNombre : methodeCourante) {
    	    	test.add(noeudTempsNombre.getTemps(), noeudTempsNombre.getNombreDeSegments());
    	    	//test.add(noeudTempsNombre.getTemps()/1000000000, noeudTempsNombre.getNombreDeSegments());
 		}
    	    xySeriesCollection.addSeries(test);
       }
-	   //on vas faire deux courbes, une pour balayage, une autre pour 
-	   
-	   
-	   //xySeriesCollection.addSeries();
-	   //XYSeries xP2 = new XYSeries("X^2");
-       //xySeriesCollection.
-	   //DatasetUtilities.sampleFunction2D(new X2(), 
-       //        -4.0, 4.0, 40, "f(x)");
-	   
-	   
-       return xySeriesCollection;
+	   //on retourne l'objet encapsulant tout
+	    return xySeriesCollection;
 	}
-   
-   /**
-    * A simple function.
-    */
-   static class X2 implements Function2D {
-
-       /* (non-Javadoc)
-        * @see org.jfree.data.function.Function2D#getValue(double)
-        */
-       public double getValue(double x) {
-           return x * x + 2;
-       }
-       
-   }
-
 }

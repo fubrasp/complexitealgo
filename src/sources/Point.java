@@ -2,44 +2,48 @@ package sources;
 
 /**
  * Classe modelisant un Point
+ * 
  * @author ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO
  */
 public class Point {
-	
-	//attributs
+
+	// attributs
 	private int x, y;
-	
+
 	/**
 	 * constructeur
-	 * @param x coordonee en x
-	 * @param y coordonee en y
+	 * 
+	 * @param x
+	 *            coordonee en x
+	 * @param y
+	 *            coordonee en y
 	 */
-	public Point(int x, int y){
-		this.x=x;
-		this.y=y;
+	public Point(int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
 
-	//getteur
+	// getteur
 	public int getX() {
 		return x;
 	}
 
-	//setteur
+	// setteur
 	public void setX(int x) {
 		this.x = x;
 	}
 
-	//getteur
+	// getteur
 	public int getY() {
 		return y;
 	}
 
-	//setteur
+	// setteur
 	public void setY(int y) {
 		this.y = y;
 	}
 
-	//methode pour l'egalite
+	// methode pour l'egalite
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -56,7 +60,7 @@ public class Point {
 		return true;
 	}
 
-	//affichage
+	// affichage
 	@Override
 	public String toString() {
 		return "Point [x=" + x + ", y=" + y + "]";
