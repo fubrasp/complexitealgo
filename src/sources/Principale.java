@@ -181,6 +181,32 @@ public class Principale {
 
 		// on le laisse en dernier a cause de la consommation des ressources
 		if (tousLesJeuxDeTests) {
+			//demo forme des jeux de tests
+			ArrayList<Segment> jeuI = Matrice.genererSegmentsAleatoire(30, 1);
+			
+			XYLineChart_AWT demoI = new XYLineChart_AWT(
+					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Visualisation des segments jeu de test (i)", jeuI);
+			demoI.pack();
+			RefineryUtilities.centerFrameOnScreen(demoI);
+			demoI.setVisible(true);
+			
+			ArrayList<Segment> jeuII = Matrice.genererSegmentsAleatoire(20, 2);
+			
+			XYLineChart_AWT demoII = new XYLineChart_AWT(
+					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Visualisation des segments jeu de test (ii)", jeuII);
+			demoII.pack();
+			RefineryUtilities.centerFrameOnScreen(demoII);
+			demoII.setVisible(true);
+			
+			ArrayList<Segment> jeuIII = Matrice.genererSegmentsAleatoire(14, 3);
+			
+			XYLineChart_AWT demoIII = new XYLineChart_AWT(
+					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Visualisation des segments jeu de test (iii)", jeuIII);
+			demoIII.pack();
+			RefineryUtilities.centerFrameOnScreen(demoIII);
+			demoIII.setVisible(true);
+			
+			
 			// jeu de tests pour le cas i
 			ArrayList<ArrayList<Segment>> listeI = new ArrayList<ArrayList<Segment>>();
 
@@ -214,7 +240,7 @@ public class Principale {
 			listeI.add(Matrice.genererSegmentsAleatoire(1600, 1));
 			listeI.add(Matrice.genererSegmentsAleatoire(1800, 1));
 			listeI.add(Matrice.genererSegmentsAleatoire(2000, 1));
-			listeI.add(Matrice.genererSegmentsAleatoire(2500, 1));
+			/*listeI.add(Matrice.genererSegmentsAleatoire(2500, 1));
 			listeI.add(Matrice.genererSegmentsAleatoire(3000, 1));
 			listeI.add(Matrice.genererSegmentsAleatoire(3500, 1));
 			listeI.add(Matrice.genererSegmentsAleatoire(4000, 1));
@@ -225,7 +251,7 @@ public class Principale {
 			listeI.add(Matrice.genererSegmentsAleatoire(6500, 1));
 			listeI.add(Matrice.genererSegmentsAleatoire(7000, 1));
 			listeI.add(Matrice.genererSegmentsAleatoire(7500, 1));
-			listeI.add(Matrice.genererSegmentsAleatoire(8000, 1));
+			listeI.add(Matrice.genererSegmentsAleatoire(8000, 1));*/
 
 			
 			
@@ -273,7 +299,7 @@ public class Principale {
 			listeII.add(Matrice.genererSegmentsAleatoire(1600, 2));
 			listeII.add(Matrice.genererSegmentsAleatoire(1800, 2));
 			listeII.add(Matrice.genererSegmentsAleatoire(2000, 2));
-			listeII.add(Matrice.genererSegmentsAleatoire(2500, 2));
+			/*listeII.add(Matrice.genererSegmentsAleatoire(2500, 2));
 			listeII.add(Matrice.genererSegmentsAleatoire(3000, 2));
 			listeII.add(Matrice.genererSegmentsAleatoire(3500, 2));
 			listeII.add(Matrice.genererSegmentsAleatoire(4000, 2));
@@ -284,7 +310,7 @@ public class Principale {
 			listeII.add(Matrice.genererSegmentsAleatoire(6500, 2));
 			listeII.add(Matrice.genererSegmentsAleatoire(7000, 2));
 			listeII.add(Matrice.genererSegmentsAleatoire(7500, 2));
-			listeII.add(Matrice.genererSegmentsAleatoire(8000, 2));
+			listeII.add(Matrice.genererSegmentsAleatoire(8000, 2));*/
 			
 
 			// on formate les donnees, et on estime le temps des algos pour le
@@ -331,7 +357,7 @@ public class Principale {
 			listeIII.add(Matrice.genererSegmentsAleatoire(1600, 3));
 			listeIII.add(Matrice.genererSegmentsAleatoire(1800, 3));
 			listeIII.add(Matrice.genererSegmentsAleatoire(2000, 3));
-			listeIII.add(Matrice.genererSegmentsAleatoire(2500, 3));
+			/*listeIII.add(Matrice.genererSegmentsAleatoire(2500, 3));
 			listeIII.add(Matrice.genererSegmentsAleatoire(3000, 3));
 			listeIII.add(Matrice.genererSegmentsAleatoire(3500, 3));
 			listeIII.add(Matrice.genererSegmentsAleatoire(4000, 3));
@@ -342,7 +368,7 @@ public class Principale {
 			listeIII.add(Matrice.genererSegmentsAleatoire(6500, 3));
 			listeIII.add(Matrice.genererSegmentsAleatoire(7000, 3));
 			listeIII.add(Matrice.genererSegmentsAleatoire(7500, 3));
-			listeIII.add(Matrice.genererSegmentsAleatoire(8000, 3));
+			listeIII.add(Matrice.genererSegmentsAleatoire(8000, 3));*/
 			
 
 			// on formate les donnees, et on estime le temps des algos pour le
