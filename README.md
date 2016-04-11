@@ -12,4 +12,6 @@ REMARQUE: le graphe a une echelle constante: c'est pas demande qu'il soit orthon
 
 Le projet contient un jar qui peut etre facilement exploite avec une commande du type java -jar nomDuJar
 
-Certains traitements peuvent être "lents" (certains graphiques)
+Certains traitements peuvent Ãªtre "lents" (certains graphiques)
+
+Vous devez imperativement utiliser un environnement eclipse et importer les jars present dans le zip
