@@ -92,7 +92,14 @@ public class Principale {
 		 * ------ Test des deux fonctions ------
 		 */
 		if (petitsExemples) {
-
+			
+			XYLineSECChart moyenne = new XYLineSECChart(
+					"Projet Complexite ARIF_BERTRAND_BOUGUETTOUCHA_GADEAU_SANCHO", "Visualisation des moyennes selon les cas i, ii et iii", Matrice.genererStructureGrapheNBPAIRESSEC());
+			moyenne.pack();
+			RefineryUtilities.centerFrameOnScreen(moyenne);
+			moyenne.setVisible(true);
+			
+			
 			//jeu de tests 1
 			System.out.println("\n*** Test fonction : Balayage() et ToutesLesPaires()\n si vous voulez tester vous-meme ne vous faites pas avoir par les segments confondus");
 			// jeu de tests pour demonstration des segments secants
@@ -167,7 +174,7 @@ public class Principale {
 		 * variant dans i, ii et iii ------
 		 */
 		if (pairesMoyennesDeSegments) {
-			int[] resultatJeuMoyen2 = Matrice.evaluerNombreDePaireDeSegmentsSeCoupantM2(100);
+			int[] resultatJeuMoyen2 = Matrice.evaluerNombreDePaireDeSegmentsSeCoupantM2(10000);
 			for (int i = 0; i < resultatJeuMoyen2.length; i++) {
 				System.out.println("JEU DE TEST: " + (i + 1) + " moyenne: " + resultatJeuMoyen2[i]);
 			}
